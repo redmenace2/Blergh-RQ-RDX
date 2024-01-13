@@ -1,0 +1,137 @@
+.ProseMirror {
+	padding: 4px 8px;
+
+	> * + * {
+		margin-top: 0.75em;
+	}
+
+	figure {
+		margin: 20px;
+
+		img {
+			display: ruby-base;
+			// max-width: 60%;
+			// height: auto;
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+			text-align: center;
+		}
+	}
+
+	.ProseMirror-selectednode {
+		img {
+			display: block;
+			outline: 3px solid blue;
+			max-width: 20%;
+			height: auto;
+			position: relative;
+		}
+
+		h1 {
+			font-size: 24px;
+		}
+
+		// float: left;
+	}
+	border: azure;
+	border-radius: 12px;
+	border-style: solid;
+	border-width: 1px;
+	width: 100%;
+	padding-left: 10px;
+	min-height: 400px;
+	height: auto;
+	padding-top: 10px;
+	background-color: rgb(151, 151, 151);
+
+	text-wrap: wrap;
+	align-self: flex-end;
+	overflow: auto;
+}
+
+.tiptap {
+	> * + * {
+		margin-top: 0.75em;
+	}
+
+	ul {
+		padding: 0 1rem;
+		list-style-type: square;
+		color: rgb(47, 82, 12);
+	}
+
+	ol {
+		padding: 0 1rem;
+		line-height: 1.1;
+		list-style-type: decimal;
+	}
+
+	h1 {
+		font-size: 24px;
+		line-height: 1.1;
+	}
+	h2 {
+		font-size: 36px;
+		line-height: 1.1;
+	}
+	h3 {
+		font-size: 48px;
+		line-height: 1.1;
+	}
+	h4 {
+		font-size: 52px;
+		line-height: 1.1;
+	}
+	h5 {
+		font-size: 64px;
+		line-height: 1.1;
+	}
+
+	code {
+		background-color: rgba(#616161, 0.1);
+		color: #616161;
+	}
+
+	pre {
+		background: #0d0d0d;
+		color: #fff;
+		font-family: 'JetBrainsMono', monospace;
+		padding: 0.75rem 1rem;
+		border-radius: 0.5rem;
+
+		code {
+			color: inherit;
+			padding: 0;
+			background: none;
+			font-size: 0.8rem;
+		}
+	}
+
+	img {
+		max-width: 50%;
+		height: auto;
+		padding: 18px;
+		border-style: double;
+		border-width: 4px;
+		border-color: bisque;
+		border-radius: 5px;
+		position: relative;
+		margin-top: 20px;
+		margin-right: 20px;
+		margin-bottom: 20px;
+		// left: 50%;
+		// transform: translateX(-50%);
+	}
+
+	blockquote {
+		padding-left: 1rem;
+		border-left: 2px solid rgba(#0d0d0d, 0.1);
+	}
+
+	hr {
+		border: none;
+		border-top: 2px solid rgba(#0d0d0d, 0.1);
+		margin: 2rem 0;
+	}
+}

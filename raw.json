@@ -1,0 +1,24 @@
+{
+  "RAW": [
+    {
+      "\"<p>THIS IS html text</p>\\n\"": "",
+      "id": 1
+    },
+    {
+      "\"<p>THIS IS html text</p>\\n\"": "",
+      "id": 2
+    },
+    {
+      "<p>An HTML TEXT</p>\n": "",
+      "id": 3
+    },
+    {
+      "<p>A new <strong>HTML Text</strong></p>\n": "",
+      "id": 4
+    },
+    {
+      "<p>Some</p>\n<p><ins>New</ins></p>\n<p><em><ins>React</ins></em></p>\n<p><strong><em><ins>Text</ins></em></strong></p>\n<p></p>\n": "",
+      "id": 5
+    }
+  ]
+}

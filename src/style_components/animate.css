@@ -1,0 +1,50 @@
+#colChange-1 {
+	animation: pulse-1 8s ease-in-out;
+}
+#colChange-2 {
+	animation: pulse-2 8s ease-in-out;
+}
+
+@keyframes pulse-1 {
+	0% {
+		color: #4ca5ff;
+	}
+
+	15% {
+		color: #a53fff;
+	}
+
+	50% {
+		color: #ff4136;
+	}
+
+	70% {
+		color: #ffffff;
+	}
+
+	100% {
+		color: #4ca5ff;
+	}
+}
+
+@keyframes pulse-2 {
+	0% {
+		color: #67ff4c;
+	}
+
+	15% {
+		color: #ff3fc5;
+	}
+
+	50% {
+		color: #ff4136;
+	}
+
+	70% {
+		color: #1a0d0d;
+	}
+
+	100% {
+		color: #ff9900;
+	}
+}
