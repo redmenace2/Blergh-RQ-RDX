@@ -65,6 +65,16 @@ export default function Home() {
 					<Button
 						variant='ghost'
 						className=' bg-red-700 w-100 transition-opacity'>
+						<p className='text-red-300 text-3xl'>
+							{' '}
+							<Link href='/publicPage'> PUBLIC PAGE</Link>
+						</p>
+					</Button>
+				</div>
+				<div>
+					<Button
+						variant='ghost'
+						className=' bg-red-700 w-100 transition-opacity'>
 						<Link href='/test/test1/TEST'>TEST PAGE </Link>
 					</Button>
 				</div>

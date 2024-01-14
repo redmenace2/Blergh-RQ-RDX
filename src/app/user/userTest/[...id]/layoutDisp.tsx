@@ -1,5 +1,5 @@
 import { MaxWidthWrapper } from '@/style_components/maxWidthWrapper';
-import { fetchArticle } from '@/app/components/userAPIComponents/getArticle';
+
 export const LayoutDisplay = () => {
 	return (
 		<MaxWidthWrapper>

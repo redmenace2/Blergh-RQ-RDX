@@ -34,7 +34,7 @@ import { Button } from '@/style_components/ui/button';
 
 import Draggable from 'react-draggable';
 
-import { useGetArticle } from '@/hooks/useGetUserArticle';
+import { useGetArticle } from '@/hooks/useGetSelectedArticle';
 import { useCreateArticle } from '@/hooks/useCreateUserArticle';
 import { useUpdateArticle } from '@/hooks/useUpdateUserArticle';
 
@@ -119,11 +119,14 @@ export default function Make_Break_Blergh({
 		console.log('LOADED');
 	}, [articleData]);
 
+	const currentDateTime = new Date();
+
 	const create = useCreateArticle({
 		authorId: queryString[2],
 		newArticleTitle: title,
 		newArticleSubtitle: subtitle,
 		newArticleText: bodyText,
+		timestamp: currentDateTime,
 	});
 
 	const update = useUpdateArticle({
@@ -131,6 +134,7 @@ export default function Make_Break_Blergh({
 		articleTitle: title,
 		articleSubtitle: subtitle,
 		articleText: bodyText.toString(),
+		timestamp: currentDateTime,
 	});
 
 	return (

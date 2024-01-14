@@ -19,16 +19,39 @@ model user {
     userName String
     password String
     content articles[]
+    comments Comment []
 }
 
 model articles{
 
     id String @id @default(auto()) @map("_id") @db.ObjectId
+
     articleTitle String
     articleSubtitle String
     articleText String
+    createdAt DateTime @db.Timestamp
     user_Id String @db.ObjectId
+    
     author user  @relation(fields: [user_Id], references: [id])
-
+    articleComments Comment []
+   
 } 
 
+model Comment {
+
+        id String @id @default(auto()) @map("_id") @db.ObjectId
+
+        commentText String
+        commentId String @db.ObjectId
+        createdAt DateTime @db.Timestamp
+
+        commentAuthor user @relation(fields: [commentId], references: [id])
+        subjectArticle articles @relation(fields: [commentId], references: [id])
+        parentId String @unique @db.ObjectId
+        parentComment Comment? @relation("CommentToComment", fields: [parentId], references: [id], onDelete: NoAction, onUpdate: NoAction )
+        childComment Comment [] @relation("CommentToComment") 
+     
+       
+     
+
+}

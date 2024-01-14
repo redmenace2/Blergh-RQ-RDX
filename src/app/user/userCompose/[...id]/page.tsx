@@ -1,5 +1,5 @@
 import { MaxWidthWrapper } from '@/style_components/maxWidthWrapper';
-import Make_Break_Blergh from '@/components/Article';
+import Make_Break_Blergh from '@/components/composeArticle';
 
 import {
 	QueryClient,

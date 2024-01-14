@@ -14,13 +14,14 @@ export const POST = async (req: Request, res: Response) => {
 					select: {
 						articleTitle: true,
 						articleSubtitle: true,
+						createdAt: true,
 						id: true,
 					},
 				},
 			},
 		});
 		await delay(200);
-
+		console.log(response?.content);
 		return new Response(JSON.stringify(response));
 	} catch (err) {
 		console.log('Server Error', err);

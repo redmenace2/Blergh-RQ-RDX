@@ -11,7 +11,7 @@ export const POST = async (req: Request, res: Response) => {
 			include: { author: true },
 		});
 
-		return new Response(JSON.stringify(article?.articleText));
+		return new Response(JSON.stringify(article));
 	} catch (err) {
 		console.log('Server error');
 	}

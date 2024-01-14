@@ -16,7 +16,10 @@ export async function POST(req: Request, res: Response) {
 			newArticleProps.newArticleTitle,
 			'\n',
 			'Subtitle',
-			newArticleProps.newArticleSubtitle
+			newArticleProps.newArticleSubtitle,
+			'\n',
+			'Create AT',
+			newArticleProps.timestamp
 		);
 
 		const response = await prisma.articles.create({
@@ -24,6 +27,7 @@ export async function POST(req: Request, res: Response) {
 				articleTitle: newArticleProps.newArticleTitle,
 				articleSubtitle: newArticleProps.newArticleSubtitle,
 				articleText: newArticleProps.newArticleText,
+				createdAt: newArticleProps.timestamp,
 				author: { connect: { id: newArticleProps.authorId } },
 			},
 		});

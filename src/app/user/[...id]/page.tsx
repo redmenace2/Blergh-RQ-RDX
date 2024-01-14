@@ -10,16 +10,8 @@ import { PrismaClient } from '@prisma/client';
 import { auth } from '../../auth/firebase/firebaseContext';
 
 export default async function Page({ params }: { params: { id: string } }) {
-	
-
 	const prisma = new PrismaClient();
 	const queryClient = new QueryClient();
-	// await queryClient.prefetchQuery({
-	// 	queryKey: ['getUserData'],
-	// 	queryFn: () => {
-	// 		return RQFN_getUserData({ email: params.id });
-	// 	},
-	// });
 
 	await queryClient.prefetchQuery({
 		queryKey: ['getUSerData'],

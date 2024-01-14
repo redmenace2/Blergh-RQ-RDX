@@ -1,5 +1,9 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { articleType, userType } from '../../../prisma/appTypes';
+import {
+	ContentWithAuthor,
+	articleType,
+	userType,
+} from '../../../prisma/appTypes';
 import { resolve } from 'path';
 
 const delay = async (sec: number) => {
@@ -8,12 +12,12 @@ const delay = async (sec: number) => {
 
 export const RQFN_getUserArticle = async (
 	articleId: string
-): Promise<string> => {
+): Promise<ContentWithAuthor | null> => {
 	if (articleId !== 'null') {
 		console.log('articleID : ', articleId);
 		try {
 			const response = await axios.post(
-				'http://localhost:3000/api/getArticles',
+				'http://localhost:3000/api/getSelectedArticles',
 				{
 					articleID: decodeURIComponent(articleId),
 				}
@@ -25,5 +29,5 @@ export const RQFN_getUserArticle = async (
 			console.log(err);
 		}
 	}
-	return '';
+	return null;
 };

@@ -21,15 +21,26 @@ export const GetUserData = ({ params }: { params: string }) => {
 		error,
 	} = useGetUserData({ emailID: params });
 
-	// const userData = await getUserData(params.id);
-
-	const rbg1: number = Math.floor(Math.random() * 96) + 120;
-	const rbg2: number = Math.floor(Math.random() * 100) + 180;
-	const rbg3: number = Math.floor(Math.random() * 220) + 220;
-
 	const RGB = (RGB_no: number) => {
 		return Math.floor(Math.random() * RGB_no - 40) + RGB_no + 100;
 	};
+
+	// const formatDate = (date: Date): string => {
+	// 	if (!isNaN(date.getTime())) {
+	// 		const formattedDate =
+	// 			date.getDate() +
+	// 			':' +
+	// 			(date.getMonth() + 1) + // Month is zero-based
+	// 			':' +
+	// 			date.getFullYear() +
+	// 			' - ' +
+	// 			date.toLocaleTimeString();
+
+	// 		return formattedDate;
+	// 	} else {
+	// 		return 'Invalid Date';
+	// 	}
+	// };
 
 	return (
 		<MaxWidthWrapper className='flex flex-col gap-4'>
@@ -109,10 +120,8 @@ export const GetUserData = ({ params }: { params: string }) => {
 														<div className='text-orange-400 text-sm text-left'>
 															{' '}
 															{val.articleSubtitle} <br />
-															<p className='text-orange-300 text-sm'>
-																{' '}
-																{val.id}{' '}
-															</p>
+															{val.createdAt.toString()}
+															<p className='text-orange-300 text-sm'> </p>
 														</div>
 													</div>{' '}
 												</div>

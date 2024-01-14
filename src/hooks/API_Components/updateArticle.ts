@@ -9,8 +9,6 @@ export const RQFN_updateArticle = async (updateProps: updateArticleType) => {
 		);
 
 		const res = JSON.stringify(response.data);
-
-		console.log(res);
 	} catch (err) {
 		console.log(err);
 	}
