@@ -4,7 +4,7 @@ import {
 	dehydrate,
 	HydrationBoundary,
 } from '@tanstack/react-query';
-import { GetUserData } from '@/components/getUserData';
+import { GetUserData } from '@/components/userPageComponents/getUserData';
 
 import { PrismaClient } from '@prisma/client';
 import { auth } from '../../auth/firebase/firebaseContext';

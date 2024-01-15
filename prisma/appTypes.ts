@@ -40,9 +40,14 @@ export type updateArticleType = {
 };
 
 export type createCommentType = {
-	subjectArticleId: string;
-	subjectCommentId: string;
+	newCommentAuthor: string;
+	newCommentAuthorId: string;
 	newCommentText: string;
+	subjectArticleId: string;
+	subjectArticleTitle: string;
+	parentCommentId: string;
+	childCommentId: string;
+	subjectCommentId: string;
 	timestamp: string;
 };
 

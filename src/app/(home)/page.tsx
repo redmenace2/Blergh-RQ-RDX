@@ -101,15 +101,16 @@ export default function Home() {
 						<Link href={`/test`}> Playground </Link>
 					</Button>
 				</div>
-
 				<div>
 					<Button
 						variant='ghost'
-						className=' bg-sky-700 w-100'>
-						<Link href={`/test/files`}> File Handler </Link>
+						className=' bg-green-400 w-48 transition-opacity'>
+						<p className='text-red-300 text-3xl'>
+							{' '}
+							<Link href='/admin'> Admin PAGE</Link>
+						</p>
 					</Button>
 				</div>
-
 				{auth === null ? (
 					<div className='text-gray-100'> wait </div>
 				) : (

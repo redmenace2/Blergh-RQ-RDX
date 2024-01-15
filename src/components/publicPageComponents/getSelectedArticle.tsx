@@ -5,17 +5,26 @@ import parse from 'html-react-parser';
 
 import { RQFN_getUserArticle } from '@/hooks/API_Components/getSelectedArticle';
 import { useGetSelectedArticle } from '@/hooks/useGetSelectedArticle';
-import { ContentWithAuthor } from '../../prisma/appTypes';
+import { ContentWithAuthor } from '../../../prisma/appTypes';
 export default function SelectedArticle({
 	params,
 }: {
 	params: { id: string };
 }) {
-	const { data: article } = useGetSelectedArticle(params.id);
+	const { data: article, isLoading } = useGetSelectedArticle(params.id);
+
+	const getArticleText = (): string => {
+		if (typeof article?.articleText === 'string') {
+			const articleText = parse(article?.articleText as string);
+
+			return articleText as string;
+		} else return '';
+	};
+
 	return (
 		<MaxWidthWrapper className='flex flex-col gap-4'>
 			<div className='text-white text-2xl'>ID: {params.id} </div>
-
+			{isLoading ?? <div className='text-green-500 text-3xl'> .. Loading </div>}
 			<section
 				className='flex flex-col gap-2 text-white'
 				style={{ fontSize: '18px', lineHeight: '1.5', lineBreak: 'auto' }}>
@@ -27,7 +36,7 @@ export default function SelectedArticle({
 					{' '}
 					AUTHOR : {article?.author.name}{' '}
 				</h1>
-				{parse(article?.articleText as string)}
+				{getArticleText()}
 			</section>
 		</MaxWidthWrapper>
 	);

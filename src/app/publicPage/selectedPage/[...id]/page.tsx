@@ -1,7 +1,7 @@
 'use client';
 
 import { MaxWidthWrapper } from '@/style_components/maxWidthWrapper';
-import SelectedArticle from '@/components/getSelectedArticle';
+import SelectedArticle from '@/components/publicPageComponents/getSelectedArticle';
 
 export default function Article({ params }: { params: { id: string } }) {
 	return (

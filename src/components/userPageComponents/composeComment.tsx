@@ -2,9 +2,9 @@
 
 import { useEditor, EditorContent, NodeView } from '@tiptap/react';
 
-import { StarterKit } from './RTE_Components/imports';
+import { StarterKit } from '../RTE_Components/imports';
 
-import { MenuBar } from './RTE_Components/Toolbar';
+import { MenuBar } from '../RTE_Components/Toolbar';
 import './RTE_Components/editorStyle/editor.css';
 import './RTE_Components/editorStyle/style.scss';
 

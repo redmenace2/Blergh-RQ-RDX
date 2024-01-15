@@ -13,32 +13,30 @@ import {
 } from '@/style_components/ui/accordion';
 import { useState } from 'react';
 import axios from 'axios';
+import { useGetAllUSers } from '@/hooks/useGetAllUsers';
 
-export default function GetAllArticles() {
-	const { data: ArticlesAuthors } = useGetAllArticle();
+export default function GetAllUSers() {
+	const { data: allUsers } = useGetAllUSers();
 
 	return (
 		<MaxWidthWrapper>
 			<div className='flex flex-col gap-4  justify-start'>
 				{' '}
-				<div className='text-white text-4xl'> ARTICLES </div>
-				{ArticlesAuthors?.map((data, key) => (
+				<div className='text-white text-4xl'> USERS </div>
+				{allUsers?.map((data, key) => (
 					<div key={key}>
-						<p className='text-slate-100 text-2xl'>
-							<Link href={`/publicPage/selectedPage/${data.id}`}>
-								{' '}
-								TITLE : {data.articleTitle}{' '}
-							</Link>
-						</p>
-						<p className='text-slate-200 text-xl'>
+						<div className='text-white text-pretty text-xs'> {key} </div>
+						<li className='text-blue-100 text-2xl'> USER NAME: {data.name} </li>
+						<li className='text-blue-200 text-sml'>
 							{' '}
-							AUTHOR : {data.author.name as string}{' '}
-						</p>
-						<p className='text-slate-300 text-xk'>
+							USER EMAIL: {data.email}{' '}
+						</li>
+						<li className='text-blue-300 text-sm'>
 							{' '}
-							Time : {data.createdAt.toString()}
-						</p>
-						<p className='text-slate-500 text-sm'> ID : {data.id} </p>
+							USER HANDLE {data.userName}{' '}
+						</li>
+						<li className='text-red-400 text-sm'> USER ID {data.id} </li>
+						<li />
 					</div>
 				))}
 			</div>

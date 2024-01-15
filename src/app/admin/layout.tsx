@@ -17,9 +17,9 @@ export default async function NestedLayout({
 	children: React.ReactNode;
 }) {
 	queryClient.prefetchQuery({
-		queryKey: ['getAllArticles'],
+		queryKey: ['getAllUsers'],
 		queryFn: () => {
-			return prisma.articles.findMany({});
+			return prisma.user.findMany({});
 		},
 	});
 
