@@ -1,6 +1,8 @@
 // import { MaxWidthWrapper } from '@/style_components/maxWidthWrapper';
 // import parse from 'html-react-parser';
 
+import { MaxWidthWrapper } from '@/style_components/maxWidthWrapper';
+
 // import { RQFN_getUserArticle } from '@/hooks/API_Components/getSelectedArticle';
 // import {
 // 	QueryClient,
@@ -26,3 +28,11 @@
 // 		</MaxWidthWrapper>
 // 	);
 // }
+
+export default function page() {
+	return (
+		<MaxWidthWrapper>
+			<div> Module </div>
+		</MaxWidthWrapper>
+	);
+}
