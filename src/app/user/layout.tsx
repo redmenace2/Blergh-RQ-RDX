@@ -1,18 +1,15 @@
-import { MaxWidthWrapper } from '@/style_components/maxWidthWrapper';
-import { useAuthContext } from '../auth/firebase/firebaseContext';
-import { redirect } from 'next/navigation';
-import { auth } from '../auth/firebase/firebaseContext';
+import {MaxWidthWrapper} from '@/style_components/maxWidthWrapper';
+import {useAuthContext} from '../auth/firebase/firebaseContext';
+import {redirect} from 'next/navigation';
+import {auth} from '../auth/firebase/firebaseContext';
 import Link from 'next/link';
-import { Button } from '@/style_components/ui/button';
+import {Button} from '@/style_components/ui/button';
 
 export default async function NestedLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
-	if (!auth) {
-		redirect('/');
-	}
 	return (
 		<MaxWidthWrapper>
 			<span className='text-orange-500 text-2xl'>B</span>

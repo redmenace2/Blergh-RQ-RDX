@@ -1,19 +1,19 @@
 'use client';
 
 import Link from 'next/link';
-import { MaxWidthWrapper } from '@/style_components/maxWidthWrapper';
-import { Button } from '@/style_components/ui/button';
-import { auth } from '../auth/firebase/firebaseContext';
-import { useState } from 'react';
+import {MaxWidthWrapper} from '@/style_components/maxWidthWrapper';
+import {Button} from '@/style_components/ui/button';
+import {auth} from '../auth/firebase/firebaseContext';
+import {useState} from 'react';
 import '@/style_components/animate.css';
 
 export default function Home() {
-	const [authed, setAuthed] = useState<boolean | null>(null);
-	const Authed = (isAuthed: typeof auth) => {
-		if (isAuthed.currentUser === null) console.log(isAuthed.currentUser);
-		setAuthed(false);
-		console.log(authed as boolean);
-	};
+	// const [authed, setAuthed] = useState<boolean | null>(null);
+	// const Authed = (isAuthed: typeof auth) => {
+	// 	if (isAuthed.currentUser === null) console.log(isAuthed.currentUser);
+	// 	setAuthed(false);
+	// 	console.log(authed as boolean);
+	// };
 
 	return (
 		<MaxWidthWrapper>

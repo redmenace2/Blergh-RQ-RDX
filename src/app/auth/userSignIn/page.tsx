@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import {useState} from 'react';
 import signIn from '../firebase/signIn';
-import { useRouter } from 'next/navigation';
+import {useRouter} from 'next/navigation';
 import React from 'react';
 
-import { MaxWidthWrapper } from '@/style_components/maxWidthWrapper';
+import {MaxWidthWrapper} from '@/style_components/maxWidthWrapper';
 
 export default function Sign_In() {
 	const router = useRouter();
@@ -15,17 +15,17 @@ export default function Sign_In() {
 
 	const handleSignInForm = async (e: React.ChangeEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		const { result, error } = await signIn(email, password);
+		const {result, error} = await signIn(email, password);
 
-		// if (!error) {
-		// 	console.log('sign  in error');
-		// 	console.log(result, 'SignIn Successful');
-		// 	router.push(`/user/${email}`);
-		// } else {
-		// 	setErr(false);
-		// 	alert('Incorrect Credential');
-		// 	return router.push('/');
-		// }
+		if (!error) {
+			console.log('sign  in error');
+			console.log(result, 'SignIn Successful');
+			router.push(`/user/${email}`);
+		} else {
+			setErr(false);
+			alert('Incorrect Credential');
+			return router.push('/');
+		}
 
 		router.push(`/user/${email}`);
 	};
@@ -35,7 +35,7 @@ export default function Sign_In() {
 				<div className='wrapper'>
 					<div className='form-wrapper'>
 						<h1 className='mt-60 mb-30'>Sign up</h1>
-						<div style={{ color: 'white' }}>
+						<div style={{color: 'white'}}>
 							<p> USER Cred</p>
 						</div>
 						<form
@@ -44,7 +44,7 @@ export default function Sign_In() {
 							<label htmlFor='email'>
 								<p>Email</p>
 								<input
-									style={{ color: 'black' }}
+									style={{color: 'black'}}
 									onChange={(e) => setEmail(e.target.value)}
 									required
 									type='email'
@@ -58,7 +58,7 @@ export default function Sign_In() {
 							<label htmlFor='password'>
 								<p>Password</p>
 								<input
-									style={{ color: 'black' }}
+									style={{color: 'black'}}
 									onChange={(e) => setPassword(e.target.value)}
 									required
 									type='password'

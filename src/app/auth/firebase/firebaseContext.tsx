@@ -1,8 +1,8 @@
 'use client';
-import { useRouter } from 'next/navigation';
-import { onAuthStateChanged, getAuth, User } from 'firebase/auth';
+import {useRouter} from 'next/navigation';
+import {onAuthStateChanged, getAuth, User} from 'firebase/auth';
 import firebase_app from './config';
-import React, { useEffect, useState, createContext, useContext } from 'react';
+import React, {useEffect, useState, createContext, useContext} from 'react';
 
 export const auth = getAuth(firebase_app);
 
@@ -20,23 +20,24 @@ export const AuthContextProvider = ({
 
 	const router = useRouter();
 
-	// useEffect(() => {
-	// 	const unsubscribe = onAuthStateChanged(auth, (user) => {
-	// 		if (user) {
-	// 			setUser(user);
-	// 		} else {
-	// 			console.log('Not Authed');
-	// 			router.push('/');
-	// 			setUser(null);
-	// 		}
-	// 		setLoading(false);
-	// 	});
-	// 	return () => unsubscribe();
-	// }, []);
+	useEffect(() => {
+		const unsubscribe = onAuthStateChanged(auth, (user) => {
+			console.log(user);
+			if (user) {
+				setUser(user);
+			} else {
+				console.log('Not Authed');
+				router.push('/');
+				setUser(null);
+			}
+			setLoading(false);
+		});
+		return () => unsubscribe();
+	}, []);
 
 	if (!user) {
 		return (
-			<authContext.Provider value={{ user, useAuthContext }}>
+			<authContext.Provider value={{user, useAuthContext}}>
 				{children}
 			</authContext.Provider>
 		);
@@ -51,7 +52,7 @@ export const AuthContextProvider = ({
 	}
 
 	return (
-		<authContext.Provider value={{ user, useAuthContext }}>
+		<authContext.Provider value={{user, useAuthContext}}>
 			{children}
 		</authContext.Provider>
 	);
